@@ -45,14 +45,3 @@ def largest_min_width_between_cows(free_sections, angry_cows):
             max_dist = mid_dist - 1
 
     return max_dist
-
-
-free_section = [0, 3, 4, 7, 10, 9]
-C = 3
-width_1 = largest_min_width_between_cows(free_section, C)
-print(f"The largest possible minimum distance is - {width_1}")
-
-free_section = [1, 2, 8, 4, 9]
-C = 3
-width_2 = largest_min_width_between_cows(free_section, C)
-print(f"The largest possible minimum distance is - {width_2}")
