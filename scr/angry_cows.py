@@ -25,7 +25,7 @@ def check_posibility_to_place_cow(free_sections, count_of_angry_cows, min_dist):
     return False
 
 
-def largest_min_width(free_sections, angry_cows):
+def largest_min_width_between_cows(free_sections, angry_cows):
     sort_free_sections = quick_sort(free_sections)
 
     if angry_cows == 2:
