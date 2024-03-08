@@ -32,10 +32,3 @@ def find_kth_largest_el(array, k):
 
     result = quick_select(0, len(array) - 1)
     return result[0], result[1]
-
-
-array_example = [15, 7, 22, 9, 36, 2, 42, 18]
-k = 3
-result, position = find_kth_largest_el(array_example, k)
-print(f'Знайдений {k}-й найбільший елемент: {result}')
-print(f'Позиція {k}-го найбільшого елемента в масиві: {position}')
