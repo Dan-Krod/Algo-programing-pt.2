@@ -15,6 +15,22 @@ class TestBinaryTreeDiameter(unittest.TestCase):
 
         self.assertEqual(max_diameter_of_binary_tree(tree), 6)
 
+    # Add extra test given during the defence of the laboratory work
+    def test_extra_example_tree(self):
+        tree = BinaryTree(90)
+        tree.left = BinaryTree(80)
+        tree.right = BinaryTree(100)
+        tree.left.left = BinaryTree(30)
+        tree.left.right = BinaryTree(70)
+        tree.left.left.left = BinaryTree(22)
+        tree.left.left.left.left = BinaryTree(21)
+        tree.left.right.left = BinaryTree(33)
+        tree.left.right.left.right = BinaryTree(34)
+        tree.left.right.left.left = BinaryTree(32)
+        tree.left.right.left.left.left = BinaryTree(31)
+
+        self.assertEqual(max_diameter_of_binary_tree(tree), 7)
+        
     def test_empty_tree(self):
         self.assertEqual(max_diameter_of_binary_tree(None), 0)
 
