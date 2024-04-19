@@ -5,7 +5,10 @@ cur_path = os.path.dirname(__file__)
 
 class TestGasStorage(unittest.TestCase):
     def test_file_with_value(self):
-        find_and_get_unreachable_cities_supply(cur_path + "\\resources\\input_gas_info.txt",cur_path + "\\resources\\output_gas_info.txt")
+        find_and_get_unreachable_cities_supply(
+            cur_path + "\\resources\\input_gas_info.txt",
+            cur_path + "\\resources\\output_gas_info.txt",
+        )
         with open(
             cur_path + "\\resources\\output_gas_info.txt",
             "r",
