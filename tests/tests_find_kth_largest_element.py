@@ -1,5 +1,5 @@
 import unittest
-from find_kth_largest import find_kth_largest_el
+from ..src.find_kth_largest_el import find_kth_largest_el
 
 
 class TestFindKthLargestEl(unittest.TestCase):
