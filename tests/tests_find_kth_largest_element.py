@@ -1,5 +1,10 @@
 import unittest
-from ..src.find_kth_largest_el import find_kth_largest_el
+import sys
+import os
+
+script_dir = os.path.dirname(os.path.relpath(__file__))
+sys.path.append(os.path.dirname(script_dir))
+from src.find_kth_largest_el import find_kth_largest_el
 
 
 class TestFindKthLargestEl(unittest.TestCase):

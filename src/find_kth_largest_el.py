@@ -4,11 +4,11 @@ def find_kth_largest_el(array, k):
 
     k_pos_el = len(array) - k
     array_and_indexes = [(val, idx) for idx, val in enumerate(array)]
-    
+
     result = quick_select(array_and_indexes, 0, len(array) - 1, k_pos_el)
     return result[0], result[1]
 
-    
+
 def quick_select(array_and_indexes, left, right, k_pos_el):
     pivot = array_and_indexes[right][0]
 
