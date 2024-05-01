@@ -1,13 +1,13 @@
 def quick_sort(array):
     if len(array) <= 1:
         return array
-    
+
     pivot = array[0]
 
     left = [i for i in array if i < pivot]
     mid = [i for i in array if i == pivot]
     right = [i for i in array if i > pivot]
-        
+
     return quick_sort(left) + mid + quick_sort(right)
 
 
@@ -30,7 +30,7 @@ def largest_min_width_between_cows(free_sections, angry_cows):
 
     if angry_cows == 2:
         return sort_free_sections[-1] - sort_free_sections[0]
-    
+
     if angry_cows < 2 or angry_cows > 100000:
         return None
 
