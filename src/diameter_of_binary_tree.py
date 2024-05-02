@@ -10,18 +10,21 @@ def max_diameter_of_binary_tree(tree):
         return 0
 
     max_diameter = [0]
-    
+
     diameter_and_len_depth_of_binary_tree(tree, max_diameter)
     return max_diameter[0]
 
+
 def diameter_and_len_depth_of_binary_tree(tree, max_diameter):
     if not tree:
-         return 0
+        return 0
     else:
         len_left_depth = diameter_and_len_depth_of_binary_tree(tree.left, max_diameter)
-        len_right_depth = diameter_and_len_depth_of_binary_tree(tree.right, max_diameter)
+        len_right_depth = diameter_and_len_depth_of_binary_tree(
+            tree.right, max_diameter
+        )
 
-        cur_diameter = len_right_depth + len_left_depth 
+        cur_diameter = len_right_depth + len_left_depth
         if max_diameter[0] < cur_diameter:
             max_diameter[0] = cur_diameter
 
@@ -29,6 +32,3 @@ def diameter_and_len_depth_of_binary_tree(tree, max_diameter):
             return len_left_depth + 1
         else:
             return len_right_depth + 1
-
-    
-  
