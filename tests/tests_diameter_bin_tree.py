@@ -1,5 +1,10 @@
 import unittest
-from diameter_binary_tree import max_diameter_of_binary_tree, BinaryTree
+import sys
+import os
+
+script_dir = os.path.dirname(os.path.relpath(__file__))
+sys.path.append(os.path.dirname(script_dir))
+from src.diameter_of_binary_tree import max_diameter_of_binary_tree, BinaryTree
 
 class TestBinaryTreeDiameter(unittest.TestCase):
     def test_example_tree(self):
