@@ -35,7 +35,7 @@ class AVLTree_Priority_Queue:
                 self._balance_after_insertion(insert_node.left)
                 return insert_node.left
             else:
-                return self.insert_recursion_and_dfs(value, insert_node.left, priority)
+                return self._insert_recursion_and_dfs(value, insert_node.left, priority)
 
         if priority < insert_node.priority:
             if insert_node.right is None:
@@ -140,16 +140,16 @@ class AVLTree_Priority_Queue:
                 return root.right
             elif not root.right:
                 return root.left
-            temp = self.find_highest_priority_node(root.right)
+            temp = self._find_highest_priority_node(root.right)
             root.value = temp.value
             root.priority = temp.priority
             root.right = self._delete_node(root.right, temp.priority)
 
         return self._main_balance_of_tree(root)
 
-    def find_highest_priority_node(self, node):
+    def _find_highest_priority_node(self, node):
         if node.right:
-            return self.find_highest_priority_node(node.right, node)
+            return self._find_highest_priority_node(node.right, node)
         return node
 
     def view_priority_queue(self):
