@@ -1,5 +1,10 @@
 import unittest
-from avl_priority_tree import AVLTree_Priority_Queue
+import sys
+import os
+
+script_dir = os.path.dirname(os.path.relpath(__file__))
+sys.path.append(os.path.dirname(script_dir))
+from src.avl_priority_queue import AVLTree_Priority_Queue
 
 
 class TestAVLTreePriorityQueue(unittest.TestCase):
