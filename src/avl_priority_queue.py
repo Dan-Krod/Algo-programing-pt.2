@@ -169,4 +169,3 @@ class AVLTree_Priority_Queue:
 
     def peek(self):
         return self.root.value if self.root else None
-      
