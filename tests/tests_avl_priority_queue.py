@@ -34,5 +34,6 @@ class TestAVLTreePriorityQueue(unittest.TestCase):
     def test_remove_from_empty_queue(self):
         self.assertIsNone(self.queue.remove_highest_priority_node())
 
+
 if __name__ == "__main__":
     unittest.main()
