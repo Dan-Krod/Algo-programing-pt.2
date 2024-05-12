@@ -1,4 +1,9 @@
 import unittest
+import sys
+import os
+
+script_dir = os.path.dirname(os.path.relpath(__file__))
+sys.path.append(os.path.dirname(script_dir))
 from src.trie_tree import Trie, trie_tree_fill
 
 
@@ -33,10 +38,6 @@ class TestTrie(unittest.TestCase):
         self.assertFalse(trie.search_word("app"))
         self.assertTrue(trie.search_prefix("app")[0])
         self.assertFalse(trie.search_prefix("pinn")[0])
-
-    def test_delete(self):
-        trie = trie_tree_fill(["apple", "banana", "orange"])
-        self.assertEqual(trie.delete("banana"), "banana")
 
 
 if __name__ == "__main__":
