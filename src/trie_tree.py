@@ -55,16 +55,9 @@ class Trie:
         found = bool(words)
         return found, words
 
-    def delete(self, word):
-        node_to_delete = self.search_word(word)
-        if node_to_delete:
-            # node_to_delete.end_part_of_word = False
-            return word
-        return None
 
-
-def trie_tree_fill(words):
+def trie_tree_fill(patterns):
     trie = Trie()
-    for word in words:
+    for word in patterns:
         trie.insert_word(word)
     return trie
