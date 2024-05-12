@@ -13,7 +13,7 @@ class Trie:
         cur_el = self.root
         for ch, letter in enumerate(word):
             if letter not in cur_el.children:
-                prefix = word[: ch + 1]
+                prefix = word[:ch + 1]
                 cur_el.children[letter] = TrieNode(data=prefix)
                 cur_el = cur_el.children[letter]
             else:
