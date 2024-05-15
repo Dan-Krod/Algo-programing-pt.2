@@ -34,7 +34,7 @@ class TestGasStorage(unittest.TestCase):
 
     def test_invalid_input_file(self):
         find_and_get_unreachable_cities_supply(
-            cur_path + "\\resources\\\invalid_input_gas_info.txt",
+            cur_path + "\\resources\\invalid_input_gas_info.txt",
             cur_path + "\\resources\\invalid_output_gas_info.txt",
         )
         with open(
