@@ -39,7 +39,7 @@ def find_and_get_unreachable_cities_supply(input_file, output_file):
         return
 
     unreachable_cities = []
-    graph = build_graph(cities,gas_lines)
+    graph = build_graph(cities, gas_lines)
     for storage in storages:
         if storage in cities:
             visited = dfs(graph, storage)
