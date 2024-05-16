@@ -1,0 +1,11 @@
+kyiv lviv nikopol dashava lutsk ternopil chernivtsi ivano-frankivsk kharkiv dnipro odesa zaporizhzhia
+nikopol dnipro 
+nikopol dashava
+dnipro kyiv
+nikopol lviv
+dnipro lutsk
+nikopol chernivtsi
+dnipro ivano-frankivsk
+nikopol kharkiv 
+nikopol odesa
+nikopol zaporizhzhia

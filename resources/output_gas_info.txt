@@ -1,0 +1,1 @@
+('nikopol', ['kyiv', 'lutsk', 'ternopil', 'ivano-frankivsk', 'dnipro'])('dnipro', ['lviv', 'nikopol', 'dashava', 'ternopil', 'chernivtsi', 'kharkiv', 'odesa', 'zaporizhzhia'])
