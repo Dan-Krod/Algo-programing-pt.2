@@ -47,7 +47,7 @@ def find_min_knight_pass(n, start, destination):
             if (
                 next_x,
                 next_y,
-            ) not in path:  # or len(path[(current_x, current_y)]) + 1 < len(path[(next_x, next_y)])
+            ) not in path:
                 path[(next_x, next_y)] = path[(current_x, current_y)] + [
                     (next_x, next_y)
                 ]
@@ -74,10 +74,3 @@ def get_min_distance_of_chess_horse(input_file_name, output_file_name):
     with open(output_file_name, "w") as file:
         file.write(str(result) + "\n")
         file.close()
-
-
-# n = 8
-# start = (7, 0)
-# destination = (0, 7)
-# result = find_min_knight_pass(n, start, destination)
-# print(result)
