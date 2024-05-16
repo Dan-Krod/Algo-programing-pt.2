@@ -15,7 +15,6 @@ class TestGasStorage(unittest.TestCase):
         file_output = "resources/output_gas_info.txt"
 
         find_and_get_unreachable_cities_supply(file_input, file_output)
-
         with open(file_output, "r", encoding="utf-8") as file:
             output = file.read()
             expected_output = "('nikopol', ['kyiv', 'lutsk', 'ternopil', 'ivano-frankivsk', 'dnipro'])('dnipro', ['lviv', 'nikopol', 'dashava', 'ternopil', 'chernivtsi', 'kharkiv', 'odesa', 'zaporizhzhia'])"
