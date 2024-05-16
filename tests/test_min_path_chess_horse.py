@@ -4,7 +4,7 @@ import os
 
 script_dir = os.path.dirname(os.path.relpath(__file__))
 sys.path.append(os.path.dirname(script_dir))
-from src.min_path_chess_hourse import get_min_distance_of_chess_horse
+from src.min_path_chess_horse import get_min_distance_of_chess_horse
 
 
 class TestChessPath(unittest.TestCase):
