@@ -27,7 +27,7 @@ class TestChessPath(unittest.TestCase):
         file.close()
         self.assertEqual(result, -1)
 
-    def test_empty_files(self):
+    def test_wrong_files(self):
         wrong_file_input = "resources/test_wrong_input.txt"
         wrong_file_output = "resources/test_wrong_output.txt"
         get_min_distance_of_chess_horse(wrong_file_input, wrong_file_output)
