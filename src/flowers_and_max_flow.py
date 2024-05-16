@@ -171,7 +171,7 @@ def read_data_and_find_max_flow(input_file: str) -> int:
     Returns:
         int: The maximum flow from farms to stores.
     """
-    with open(f'../resources/{input_file}')as csv_file:
+    with open(f'resources/{input_file}')as csv_file:
         csv_reader = csv.reader(csv_file)
         data = [row for row in csv_reader]
         if len(data) < 2:
@@ -183,7 +183,3 @@ def read_data_and_find_max_flow(input_file: str) -> int:
 
     max_flow = find_max_flow(farms, lines, stores, "F", "S")
     return max_flow
-
-
-result = read_data_and_find_max_flow("roads.csv")
-print(result)
