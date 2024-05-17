@@ -36,7 +36,7 @@ class TestBinaryTreeDiameter(unittest.TestCase):
         tree.left.right.left.left.left = BinaryTree(31)
 
         self.assertEqual(max_diameter_of_binary_tree(tree), 7)
-        
+
     def test_empty_tree(self):
         self.assertEqual(max_diameter_of_binary_tree(None), 0)
 

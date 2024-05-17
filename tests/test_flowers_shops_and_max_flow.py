@@ -20,5 +20,6 @@ class TestFlowersMaxFlow(unittest.TestCase):
         result = read_data_and_find_max_flow("empty_roads.csv")
         self.assertEqual(result, -1)
 
+
 if __name__ == "__main__":
     unittest.main()

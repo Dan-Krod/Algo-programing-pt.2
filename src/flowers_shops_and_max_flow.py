@@ -2,7 +2,10 @@ import csv
 from collections import deque
 from typing import Dict, List
 
-def bfs(graph: Dict[str, Dict[str, int]], start: str, end: str, parent: Dict[str, str]) -> bool:
+
+def bfs(
+    graph: Dict[str, Dict[str, int]], start: str, end: str, parent: Dict[str, str]
+) -> bool:
     """
     Perform Breadth-First Search to find a path from start to end in the residual graph.
     Args:
@@ -31,7 +34,9 @@ def bfs(graph: Dict[str, Dict[str, int]], start: str, end: str, parent: Dict[str
     return False
 
 
-def build_graph(farms: List[str], lines: List[List[str]], stores: List[str]) -> Dict[str, Dict[str, int]]:
+def build_graph(
+    farms: List[str], lines: List[List[str]], stores: List[str]
+) -> Dict[str, Dict[str, int]]:
     """
     Build the graph from the farms, lines, and stores data.
     Args:
@@ -74,7 +79,9 @@ def get_min_flow_in_path(graph: Dict[str, Dict[str, int]], path: List[str]) -> i
     return min_weight
 
 
-def remove_min_flow_from_vertices_in_path(graph: Dict[str, Dict[str, int]], path: List[str], min_flow: int, vertex_idx: int) -> None:
+def remove_min_flow_from_vertices_in_path(
+    graph: Dict[str, Dict[str, int]], path: List[str], min_flow: int, vertex_idx: int
+) -> None:
     """
     Update the residual capacities of edges in the given path after augmenting flow.
     Args:
@@ -88,7 +95,9 @@ def remove_min_flow_from_vertices_in_path(graph: Dict[str, Dict[str, int]], path
     graph[start_city][end_city] -= min_flow
 
 
-def get_neighbor_edge_weight(graph: Dict[str, Dict[str, int]], path: List[str], vertex_idx: int) -> int:
+def get_neighbor_edge_weight(
+    graph: Dict[str, Dict[str, int]], path: List[str], vertex_idx: int
+) -> int:
     """
     Get the weight of the edge between two consecutive vertices in the path.
     Args:
@@ -103,7 +112,9 @@ def get_neighbor_edge_weight(graph: Dict[str, Dict[str, int]], path: List[str], 
     return graph[start_city][end_city]
 
 
-def get_path(previous: Dict[str, str], start_vertex: str, last_vertex: str) -> List[str]:
+def get_path(
+    previous: Dict[str, str], start_vertex: str, last_vertex: str
+) -> List[str]:
     """
     Reconstructs the path from the start vertex to the last vertex using the previous dictionary.
     Args:
@@ -121,7 +132,10 @@ def get_path(previous: Dict[str, str], start_vertex: str, last_vertex: str) -> L
     path.reverse()
     return path
 
-def find_max_flow(farms: List[str], lines: List[List[str]], stores: List[str], start: str, end: str) -> int:
+
+def find_max_flow(
+    farms: List[str], lines: List[List[str]], stores: List[str], start: str, end: str
+) -> int:
     """
     Find the maximum flow from farms to stores using Ford-Fulkerson algorithm.
     Args:
@@ -156,7 +170,7 @@ def read_data_and_find_max_flow(input_file: str) -> int:
     Returns:
         int: The maximum flow from farms to stores.
     """
-    with open(f'resources/{input_file}')as csv_file:
+    with open(f"resources/{input_file}") as csv_file:
         csv_reader = csv.reader(csv_file)
         data = [row for row in csv_reader]
         if len(data) < 2:
