@@ -66,7 +66,7 @@ def longest_word_chain(input_file_name: str, output_file_name: str) -> int:
     except Exception:
         return -1
     
-    words.sort()
+    words.sort(key=lambda word: -len(word))
     word_index = {word: i for i, word in enumerate(words)}
 
     max_chain_length = 0
