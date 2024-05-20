@@ -1,29 +1,5 @@
 from typing import List, Dict
 
-def is_predecessor(word: str, pred: str) -> bool:
-    """
-    Check if `pred` is a predecessor of `word`, meaning that `pred` can be
-    formed by removing exactly one character from `word`.
-    
-    Args:
-        word (str): The original word.
-        pred (str): The potential predecessor word.
-        
-    Returns:
-        bool: True if `pred` is a predecessor of `word`, False otherwise.
-    """
-    if len(pred) != len(word) - 1:
-        return False
-    i = 0
-    j = 0
-    while i < len(word) and j < len(pred):
-        if word[i] != pred[j]:
-            i += 1
-        else:
-            i += 1
-            j += 1
-    return j == len(pred)
-
 def get_longest_chain_length(words: List[str], word_index: Dict[str, int], i: int, memo: Dict[int, int]) -> int:
     """
     Compute the length of the longest chain ending with the word at index `i`.
@@ -44,7 +20,7 @@ def get_longest_chain_length(words: List[str], word_index: Dict[str, int], i: in
     current_word = words[i]
     for j in range(len(current_word)):
         pred = current_word[:j] + current_word[j+1:]
-        if pred in word_index and is_predecessor(current_word, pred):
+        if pred in word_index:  
             chain_length = 1 + get_longest_chain_length(words, word_index, word_index[pred], memo)
             max_length = max(max_length, chain_length)
     memo[i] = max_length
