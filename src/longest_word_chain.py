@@ -20,7 +20,7 @@ def get_longest_chain_length(words: List[str], word_index: Dict[str, int], i: in
     current_word = words[i]
     for j in range(len(current_word)):
         pred = current_word[:j] + current_word[j+1:]
-        if pred in word_index:     # and is_predecessor(current_word, pred):
+        if pred in word_index:
             chain_length = 1 + get_longest_chain_length(words, word_index, word_index[pred], longest_chain_lengths)
             max_length = max(max_length, chain_length)
     longest_chain_lengths[i] = max_length
