@@ -1,6 +1,6 @@
 from typing import List, Dict
 
-def get_longest_chain_length(words: List[str], word_index: Dict[str, int], i: int, memo: Dict[int, int]) -> int:
+def get_longest_chain_length(words: List[str], word_index: Dict[str, int], i: int, longest_chain_lengths: Dict[int, int]) -> int:
     """
     Compute the length of the longest chain ending with the word at index `i`.
     
@@ -8,22 +8,22 @@ def get_longest_chain_length(words: List[str], word_index: Dict[str, int], i: in
         words (List[str]): The list of words.
         word_index (Dict[str, int]): A dictionary mapping words to their indices in `words`.
         i (int): The current index in `words`.
-        memo (Dict[int, int]): A memoization dictionary to store the results of subproblems.
+        longest_chain_lengths (Dict[int, int]): A dictionary to store the lengths of the longest chains.
         
     Returns:
         int: The length of the longest word chain ending at the word `words[i]`.
     """
-    if i in memo:
-        return memo[i]
+    if i in longest_chain_lengths:
+        return longest_chain_lengths[i]
 
     max_length = 1
     current_word = words[i]
     for j in range(len(current_word)):
         pred = current_word[:j] + current_word[j+1:]
-        if pred in word_index:  
-            chain_length = 1 + get_longest_chain_length(words, word_index, word_index[pred], memo)
+        if pred in word_index:     # and is_predecessor(current_word, pred):
+            chain_length = 1 + get_longest_chain_length(words, word_index, word_index[pred], longest_chain_lengths)
             max_length = max(max_length, chain_length)
-    memo[i] = max_length
+    longest_chain_lengths[i] = max_length
     return max_length
 
 def longest_word_chain(input_file_name: str, output_file_name: str) -> int:
@@ -46,9 +46,9 @@ def longest_word_chain(input_file_name: str, output_file_name: str) -> int:
     word_index = {word: i for i, word in enumerate(words)}
 
     max_chain_length = 0
-    memo = {}
+    longest_chain_lengths = {}
     for i in range(len(words)):
-        max_chain_length = max(max_chain_length, get_longest_chain_length(words, word_index, i, memo))
+        max_chain_length = max(max_chain_length, get_longest_chain_length(words, word_index, i, longest_chain_lengths))
     
     write_file(output_file_name, max_chain_length)
     return max_chain_length
